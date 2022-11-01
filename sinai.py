@@ -144,7 +144,7 @@ class Simulation():
                              speed_factor=1,
                              styles=None):
         try:
-            iterator = iter(radius)
+            _ = (r for r in radius)
             assert n == len(radius)
         except TypeError:
             # r isn't iterable: turn it into a generator that returns the
