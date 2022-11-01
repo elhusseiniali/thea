@@ -119,7 +119,9 @@ class Simulation():
                                   speed_factor,
                                   styles)
 
-    def place_particle(self, r, x=None, y=None, m=0, speed_factor=1, styles=None):
+    def place_particle(self, r, x=None, y=None,
+                       m=0, speed_factor=1,
+                       styles=None):
         if not x and not y:
             x, y = r + (1 - 2 * r) * np.random.random(2)
 
@@ -261,12 +263,13 @@ class Simulation():
             plt.show()
 
 
-n = 10
-radii = np.random.random(n) * 0.03 + 0.02
+if __name__ == '__main__':
+    n = 10
+    radii = np.random.random(n) * 0.03 + 0.02
 
-styles = {'color': 'C9',
-          'linewidth': 2,
-          'fill': 0}
+    styles = {'color': 'C9',
+              'linewidth': 2,
+              'fill': 0}
 
-s = Simulation(n=n, radius=radii, speed_factor=1, styles=styles)
-s.run()
+    s = Simulation(n=n, radius=radii, speed_factor=1, styles=styles)
+    s.run()
